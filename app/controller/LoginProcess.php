@@ -10,15 +10,15 @@
  *
  * @author Fillipe
  */
-include_once("../modelo/Usuario.php");
-class ProcessaLogin {
+include_once("../model/User.php");
+class LoginProcess {
 
    public $usuario = null;
 
    function ProcessaLogin(){
-       $this->usuario = new Usuario;
+       $this->usuario = new User;
    }
-   function setUsuario(Usuario $usuario){
+   function setUsuario(User $usuario){
        $this->usuario = $usuario;
    }
     function checaDados($login, $senha){
@@ -37,9 +37,8 @@ class ProcessaLogin {
     function criaSessao(){
 
             if(!isset($_SESSION))session_start ();
-            $_SESSION['idUsuario'] = $this->usuario->get('id');
-            $_SESSION['usuario_login'] = $this->usuario->get('login');
-            $_SESSION['usuario_tipo'] = $this->usuario->get('tipo');
+            $_SESSION['userID'] = $this->usuario->get('id');
+            $_SESSION['userLogin'] = $this->usuario->get('login');
 
 
     }

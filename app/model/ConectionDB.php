@@ -7,7 +7,7 @@
  *
  * @author Fillipe
  */
-class ConexaoBanco {
+class ConectionDB {
     private $host = 'localhost';
     private $user = 'check';
     private $pass = 'check';
@@ -16,12 +16,12 @@ class ConexaoBanco {
     private $con;
     function conectar(){
         if($this->con == NULL){
-        $this->con = mysql_connect($this->host, $this->user, $this->pass, $this->db);
+        $this->con = mysqli_connect($this->host, $this->user, $this->pass, $this->db);
         }
         return $this->con;
     }
     function selecionarDB(){
-        $sel = mysql_select_db($this->db) or die($this->erro(mysql_error()));
+        $sel = mysqli_select_db($this->db) or die($this->erro(mysqli_error()));
         if($sel){
             return true;
         }else{
@@ -29,7 +29,7 @@ class ConexaoBanco {
         }
      }
      function consulta(){
-         $consulta = mysql_query($this->sql) or die ($this->erro(mysql_error()));
+         $consulta = mysqli_query($this->sql) or die ($this->erro(mysqli_error()));
          return $consulta;
      }
      function set($prop, $value){
@@ -42,7 +42,7 @@ class ConexaoBanco {
          echo $erro;
      }
      function encerraConexao(){
-         mysql_close($this->con);
+         mysqli_close($this->con);
      }
 }
 
