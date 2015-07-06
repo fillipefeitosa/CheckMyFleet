@@ -1,5 +1,6 @@
 <?php
   require_once('modules/head.php');
+  require_once('../controller/routes.php');
 ?>
   <body class="skin-blue sidebar-mini">
     <div class="wrapper">
@@ -196,13 +197,15 @@
           <ul class="sidebar-menu">
             <li class="header">MENU</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="#"><i class='fa fa-link'></i> <span>Perfil</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>Organização</span></a></li>
+            <li class="active"><a href="index.php?id=profile"><i class='fa fa-link'></i> <span>Perfil</span></a></li>
+            <li><a href="index.php?id=organization"><i class='fa fa-link'></i> <span>Organização</span></a></li>
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i> <span>Frota</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="#">Consumo e Pressão dos Pneus</a></li>
-                <li><a href="#">Relatório Geral</a></li>
+                <li><a href="index.php?id=consumption">Consumo e Pressão dos Pneus</a></li>
+                <li><a href="index.php?id=rpmmeter">Medidor de RPM</a></li>
+                <li><a href="index.php?id=generalreport">Relatório Geral</a></li>
+
               </ul>
             </li>
           </ul><!-- /.sidebar-menu -->
@@ -227,13 +230,12 @@
         <!-- Main content -->
         <section class="content">
 
-          <!-- if you need user information, just put them into the $_SESSION variable and output them here -->
-          Olá <?php echo $_SESSION['user_name']; ?>. Você está logado no sistema.
-          Confira as opções no menu ao lado.
+          <?php
+              //Aqui o conteúdo da página é efetivamente carregado pelo
+              //arquivo de rotas na controladora
+              loadContent($page, $path);
 
-          <!-- because people were asking: "index.php?logout" is just my simplified form of "index.php?logout=true" -->
-
-
+          ?>
 
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
@@ -320,6 +322,8 @@
     <script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- AdminLTE App -->
     <script src="../../dist/js/app.min.js" type="text/javascript"></script>
+
+    <script src="../../dist/js/zingchart.min.js"></script>
 
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
           Both of these plugins are recommended to enhance the
