@@ -8,7 +8,7 @@
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="index.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>C</b>m<b>F</b></span>
           <!-- logo for regular state and mobile devices -->
@@ -84,7 +84,7 @@
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-flag-o"></i>
-                  <span class="label label-danger">9</span>
+                  <span class="label label-danger">2</span>
                 </a>
                 <ul class="dropdown-menu">
                   <li class="header">You have 9 tasks</li>
@@ -147,7 +147,7 @@
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
+                      <a href="#" class="btn btn-default btn-flat">Perfil</a>
                     </div>
                     <div class="pull-right">
                       <a href="index.php?logout" class="btn btn-default btn-flat">Logout</a>
@@ -184,7 +184,7 @@
           <!-- search form (Optional) -->
           <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
-              <input type="text" name="q" class="form-control" placeholder="Search..."/>
+              <input type="text" name="q" class="form-control" placeholder="Pesquisar..."/>
               <span class="input-group-btn">
                 <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
               </span>
@@ -194,15 +194,15 @@
 
           <!-- Sidebar Menu -->
           <ul class="sidebar-menu">
-            <li class="header">HEADER</li>
+            <li class="header">MENU</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="#"><i class='fa fa-link'></i> <span>Link</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>Another Link</span></a></li>
+            <li class="active"><a href="#"><i class='fa fa-link'></i> <span>Perfil</span></a></li>
+            <li><a href="#"><i class='fa fa-link'></i> <span>Organização</span></a></li>
             <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class='fa fa-link'></i> <span>Frota</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="#">Link in level 2</a></li>
-                <li><a href="#">Link in level 2</a></li>
+                <li><a href="#">Consumo e Pressão dos Pneus</a></li>
+                <li><a href="#">Relatório Geral</a></li>
               </ul>
             </li>
           </ul><!-- /.sidebar-menu -->
@@ -215,8 +215,8 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Page Header
-            <small>Optional description</small>
+            Bem vindo,
+            <small>esta é sua página principal. </small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -228,8 +228,8 @@
         <section class="content">
 
           <!-- if you need user information, just put them into the $_SESSION variable and output them here -->
-          Hey, <?php echo $_SESSION['user_name']; ?>. You are logged in.
-          Try to close this browser tab and open it again. Still logged in! ;)
+          Olá <?php echo $_SESSION['user_name']; ?>. Você está logado no sistema.
+          Confira as opções no menu ao lado.
 
           <!-- because people were asking: "index.php?logout" is just my simplified form of "index.php?logout=true" -->
 
