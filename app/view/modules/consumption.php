@@ -1,6 +1,6 @@
 <?php
     /* Open connection to "zing_db" MySQL database. */
-    $mysqli = new mysqli("localhost", "root", "macaco", "check");
+    $mysqli = new mysqli("localhost", "check", "macaco", "checkmyfleeet");
 
     /* Check the connection. */
     if (mysqli_connect_errno()) {
