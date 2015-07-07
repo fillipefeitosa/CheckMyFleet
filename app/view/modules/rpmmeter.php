@@ -36,9 +36,9 @@ window.onload=function(){
         width:"100%",
         height:400,
         data:{
-        "type":"bar",
+        "type":"area",
         "title":{
-            "text":"RPM vindo direto da Base de Dados"
+            "text":"Medidor de Rotações por Minuto(RPM)"
         },
         "scale-x":{
             "labels":myLabels

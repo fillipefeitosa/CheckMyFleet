@@ -204,6 +204,7 @@
               <ul class="treeview-menu">
                 <li><a href="index.php?id=consumption">Consumo e Pressão dos Pneus</a></li>
                 <li><a href="index.php?id=rpmmeter">Medidor de RPM</a></li>
+                <li><a href="index.php?id=autonomy">Autonomia</a></li>
                 <li><a href="index.php?id=generalreport">Relatório Geral</a></li>
 
               </ul>

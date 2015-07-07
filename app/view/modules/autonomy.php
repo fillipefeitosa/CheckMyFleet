@@ -14,7 +14,7 @@
 <script>
     var myData1=[<?php
     while($info=mysqli_fetch_array($data))
-        echo $info['pressure'].','; /* We use the concatenation operator '.' to add comma delimiters after each data value. */
+        echo $info['kph'].','; /* We use the concatenation operator '.' to add comma delimiters after each data value. */
     ?>];
 
     <?php
@@ -22,7 +22,7 @@
     ?>
     var myData2=[<?php
     while($info=mysqli_fetch_array($data))
-        echo $info['consumption'].','; /* We use the concatenation operator '.' to add comma delimiters after each data value. */
+        echo $info['autonomy'].','; /* We use the concatenation operator '.' to add comma delimiters after each data value. */
     ?>];
 
     <?php
@@ -30,7 +30,7 @@
     ?>
     var myLabels=[<?php
     while($info=mysqli_fetch_array($data))
-        echo '"'.$info['measurementDate']." ".$info['measurementTime'].'",'; /* The concatenation operator '.' is used here to create string values from our database names. */
+    echo '"'.$info['measurementDate']." ".$info['measurementTime'].'",'; /* The concatenation operator '.' is used here to create string values from our database names. */
     ?>];
 </script>
 
@@ -47,17 +47,18 @@ window.onload=function(){
         data:{
         "type":"area",
         "title":{
-            "text":"Relação entre o Consumo e a Pressão dos Pneus"
+            "text":"Velocidade(Km/h) e Autonomia(Km/L)"
         },
         "scale-x":{
             "labels":myLabels
         },
         "scale-y":{
           "line-color":"green",
-          "values":"70:76:2"
+          "label":{
+            "text":"Velocidade(Km/h)"
+          },
         },
         "scale-y-2":{
-          "values":"0:8:2",
           "line-color":"blue"
         },
         "series":[
